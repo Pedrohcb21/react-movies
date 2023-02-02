@@ -3,9 +3,9 @@ import styled from "styled-components";
 export const MainContainer = styled.div `
     height: 100vh;
 
-    display: flex
+    display: flex;
     flex-direction: column;
-    
+
     div{
         display: flex;
         flex-wrap: wrap;
