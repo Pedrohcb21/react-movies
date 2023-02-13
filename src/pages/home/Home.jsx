@@ -15,7 +15,9 @@ export function Home() {
 
     return (
         <MainContainer>
-            <img src={background} alt="" />
+            <img className="background" src={background} 
+            alt="imagem Fullflix" 
+            />
 
             <h1>Filmes populares</h1>
 
