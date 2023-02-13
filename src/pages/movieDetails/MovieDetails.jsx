@@ -1,7 +1,8 @@
-import { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { MovieDetailsContainer } from "./MovieDetailsStyle";
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { ButtonHome } from '../../components/buttonHome/ButtonHome';
+import { Footer } from '../../components/footer/Footer';
+import { MovieDetailsContainer } from './MovieDetailsStyle';
 
 
 export function MovieDetails() {
@@ -25,11 +26,9 @@ export function MovieDetails() {
                 <p>Nota: {movieState.vote_average}</p>
             </div>
 
-            <Link to="/">
-                <button>
-                    Voltar para home
-                </button>
-            </Link>
+            <ButtonHome/>
+
+            <Footer/>
                 
         </MovieDetailsContainer>
     );

@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
-export const FooterContent = styled.div `
+export const FooterConteiner = styled.div `
     color: #fff;
     font-weight: bolder;
     font-size: 1em;
     text-align: center;
+
+    margin: 2vw 0;
 `

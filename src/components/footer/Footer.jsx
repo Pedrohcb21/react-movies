@@ -1,10 +1,10 @@
-import { FooterContent } from "./footerStyle";
+import { FooterConteiner } from "./footerStyle";
 
 
 export function Footer() {
     return (
-        <FooterContent>
+        <FooterConteiner>
             <p>React-Movies @ Todos os direitos reservados. 2023.</p>
-        </FooterContent>
+        </FooterConteiner>
     );
 };

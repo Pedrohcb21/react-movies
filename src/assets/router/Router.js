@@ -1,6 +1,6 @@
 import { Home } from '../../pages/home/Home';
 import { MovieDetails } from '../../pages/movieDetails/MovieDetails';
-import { NotFound } from '../../pages/erros/NotFound';
+import { NotFound } from '../../pages/erros/notFound/NotFound';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export function Router() {

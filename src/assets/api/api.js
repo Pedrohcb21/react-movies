@@ -1,9 +1,11 @@
 import axios from 'axios';
 
+const BaseURL = "https://api.themoviedb.org/3/movie";
+const ApiKey = "api_key=c04907158a41e251ce886efdd556ccb5";
+
 export const getList = (setState) => {
-    axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=c04907158a41e251ce886efdd556ccb5&language=pt-BR&page=1`)
+    axios.get(`${BaseURL}/popular?${ApiKey}&language=pt-BR&page=1`)
     .then((response)=>{
-        console.log(response.data.results)
         setState(response.data.results)
     }).catch((err)=>{
         console.log(err)
@@ -11,9 +13,8 @@ export const getList = (setState) => {
 };
 
 export const getDetails = async(id, setDetail) => {
-    axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=c04907158a41e251ce886efdd556ccb5&language=pt-BR`)
+    axios.get(`${BaseURL}/${id}?${ApiKey}&language=pt-BR`)
     .then((response) => {
-        console.log(response.data.results);
         setDetail(response.data);
     }).catch((err) => {
         console.error(err)

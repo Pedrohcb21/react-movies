@@ -12,6 +12,7 @@ export const MovieDetailsContainer = styled.div `
     justify-content: center;
     text-align: center;
     gap: 12px;
+    padding-top: 2vh;
 
     div {
         display: flex;
@@ -19,17 +20,7 @@ export const MovieDetailsContainer = styled.div `
         gap: 32px;
     }
 
-    button {
-        text-decoration: none;
-        background-color: red;
-        color: #fff;
-        padding: 1vw;
-        border-radius: 12px;
-        font-size: 0.5em;
-    }
-
-    button:hover {
-        background-color: transparent;
-        cursor: pointer;
+    img {
+        border: 3px solid #fff;
     }
 `
