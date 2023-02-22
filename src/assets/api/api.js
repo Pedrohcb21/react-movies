@@ -21,12 +21,3 @@ export const getDetails = async(id, setDetail) => {
         console.error(err)
     })
 };
-
-export const getSearchMovie = (query) => {
-    axios.get(`${UrlSearch}${ApiKey}&query=${query}`)
-            .then((response) => {
-                console.log(response);
-            }).catch((err) => {
-                console.error(err);
-            })
-};
