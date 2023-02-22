@@ -6,16 +6,12 @@ import { MovieDetailsContainer } from './MovieDetailsStyle';
 
 
 export function MovieDetails() {
-    const movieState = useSelector((state) => state.fullflix.movie)
-    
-    useEffect(() => {
-        console.log(movieState);
-    })
+    const movieState = useSelector((state) => state.fullflix.movie);
 
     return (
         <MovieDetailsContainer>
             <img src={`https://image.tmdb.org/t/p/w500/${movieState.poster_path}`} 
-            alt={movieState.tile} 
+            alt={movieState.title} 
             />
 
             <div>

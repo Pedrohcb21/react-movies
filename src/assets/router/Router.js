@@ -1,7 +1,9 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import { Home } from '../../pages/home/Home';
 import { MovieDetails } from '../../pages/movieDetails/MovieDetails';
+import { Search } from "../../pages/search/Search";
 import { NotFound } from '../../pages/erros/notFound/NotFound';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export function Router() {
     return (
@@ -9,6 +11,7 @@ export function Router() {
             <Routes>
                 <Route index element={<Home/>}></Route>
                 <Route path="/MovieDetails" element={<MovieDetails/>}></Route>
+                <Route path="/Search" element={<Search/>}></Route>
                 <Route path="*" element={<NotFound/>}></Route>
             </Routes>
         </BrowserRouter>

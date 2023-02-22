@@ -11,6 +11,8 @@ export const MainContainer = styled.div `
     justify-content: center;
     align-items: center;
     gap: 10vh;
+    
+    color: #fff;
 
     .background {
         width: 100%;
