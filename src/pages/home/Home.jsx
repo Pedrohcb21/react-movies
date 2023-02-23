@@ -24,7 +24,7 @@ export function Home() {
             alt="imagem Fullflix" 
             />
 
-                <form onSubmit={getSearch}>
+            <form onSubmit={getSearch}>
                 <input
                 type="text"
                 onChange={(e)=>setSearch(e.target.value)}

@@ -1,6 +1,10 @@
+import { ButtonHome } from "../../components/buttonHome/ButtonHome";
+import { Footer } from "../../components/footer/Footer";
+
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import axios from "axios";
+
+import { getSearchMovie } from "../../assets/api/api";
 
 export function Search () {
     const UrlSearch = `https://api.themoviedb.org/3/search/movie?`;
@@ -13,26 +17,18 @@ export function Search () {
 
     const [movies, setMovies] = useState([]);
 
-    const getSearchMovie = async(url) => {
-        axios.get(`${url}`)
-                .then((response) => {
-                    console.log(response.data.results);
-                    setMovies(response.data.results);
-                }).catch((err) => {
-                    console.error(err);
-                })
-    };
-
     useEffect(() => {
         const getSearchUrl = `${UrlSearch}${ApiKey}&query=${query}`;
 
-        getSearchMovie(getSearchUrl);
+        getSearchMovie(getSearchUrl, setMovies);
 
         console.log(query)
     }, [query])
 
     return (
         <div>
+            <ButtonHome/>
+
             {movies.map((i) => {
                 return (
                     <div>
@@ -45,6 +41,8 @@ export function Search () {
                     </div>
                 )
             })}
+
+            <Footer/>
         </div>
     )
 };
