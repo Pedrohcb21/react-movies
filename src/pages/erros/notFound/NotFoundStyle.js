@@ -8,4 +8,10 @@ export const NotFoundConatiner = styled.div `
     margin: 20% auto;
 
     font-size: 2em;
+
+    color: #fff;
+
+    h1 {
+        font-size: 1.5em;
+    }
 `

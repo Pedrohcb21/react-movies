@@ -17,12 +17,12 @@ export const MainContainer = styled.div `
     .background {
         width: 100%;
         height: fit-content;
-
     }
 
     h1 {
         color: #fff;
         text-decoration: underline red;
+        font-size: 1.5em;
     }
 
     div {
@@ -32,5 +32,39 @@ export const MainContainer = styled.div `
         gap: 32px;
 
         margin: 1vw;
+    }
+
+    .search {
+        width: 50vw;
+        height: 4vh;
+
+        border-radius: 16px;
+        border-style: none;
+        border: 1px solid #fff;
+        outline: 0;
+
+        color: #fff;
+        background-color: #000;
+    }
+
+    .search:hover {
+        border: 1px solid red;
+        opacity: 0.5;
+    }
+
+    .search, placeholder {
+        padding-left: 12px;
+        font-size: 0.5em;
+    }
+    
+    .search, button {
+        padding: 6px;
+        margin-left: 8px;
+        border-radius: 16px;
+        font-size: 1vw;
+        color: #fff;
+        background-color: #000;
+        border: 2px solid #fff;
+        cursor: pointer;
     }
 `

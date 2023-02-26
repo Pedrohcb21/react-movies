@@ -3,24 +3,29 @@ import styled from "styled-components";
 export const MovieDetailsContainer = styled.div `
     background-color: #000;
     color: #fff;
-    font-size: 2vw;
-    min-height: 100vh;
+
+    padding: 16px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    gap: 12px;
-    padding-top: 2vh;
+    /* text-align: center; */
 
     div {
         display: flex;
         flex-direction: column;
-        gap: 32px;
+        gap: 20px;
     }
 
     img {
-        border: 3px solid #fff;
+        align-self: center;
+        width: 20%;
+        border: 2px solid #fff;
+        border-radius: 16px;
+    }
+
+    .text {
+        font-size: 1.5vw;
     }
 `

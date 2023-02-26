@@ -9,11 +9,12 @@ export const ButtonHomeStyle = styled(Link) `
             margin-top: 16px;
             padding: 1vw;
             border-radius: 12px;
-            font-size: 0.5em;
+            font-size: 1vw;
         }
 
         button:hover {
             background-color: transparent;
             cursor: pointer;
+            border: 2px solid #fff;
         }
 `

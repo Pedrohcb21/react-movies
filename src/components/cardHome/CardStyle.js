@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import styled from "styled-components";
 
 
@@ -14,12 +14,17 @@ export const MainContainerCard = styled(Link) `
 
     color: #fff;
     border: 2px solid #fff;
+    border-radius: 16px;
 
     :hover {
         border-color: red;
+        opacity: 0.5;
     }
 
     img {
-        width: 90%;
+        max-width: 90%;
+        max-height: 70%;
+
+        border-radius: 12px;
     }
 `

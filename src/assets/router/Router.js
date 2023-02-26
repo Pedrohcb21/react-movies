@@ -10,8 +10,8 @@ export function Router() {
         <BrowserRouter>
             <Routes>
                 <Route index element={<Home/>}></Route>
-                <Route path="/MovieDetails" element={<MovieDetails/>}></Route>
-                <Route path="/Search" element={<Search/>}></Route>
+                <Route path="MovieDetails/:id" element={<MovieDetails/>}></Route>
+                <Route path="Search" element={<Search/>}></Route>
                 <Route path="*" element={<NotFound/>}></Route>
             </Routes>
         </BrowserRouter>
