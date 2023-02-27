@@ -1,24 +1,39 @@
-name: deploy
-
+name: Check for updated gems
 on:
+  workflow_dispatch:
   push:
-    branches:
-      - master
-
+  # 3am Mon-Fri (schedule only runs on default branch)
+  schedule:
+    - cron: '0 3 * * 1-5'
 jobs:
-  deploy:
-    runs-on: ubuntu-18.04
+  update:
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '14.x'
-      - name: Build web-app
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # Create a lock file if there isn't one
+      # Update the lock file to use latest versions
+      # Use same docker environment as build so same version of bundler
+      - name: Update gemfile.lock 
         run: |
-          npm ci
-          npm run build
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
+          docker run \
+          -v ${{ github.workspace }}:/srv/jekyll \
+          jekyll/jekyll:4 /bin/bash -c "chmod 777 /srv/jekyll && ( chmod 777 Gemfile.lock || true ) && bundle lock && bundle lock --conservative --update"
+
+      - name: Create pull request for any changes
+        uses: peter-evans/create-pull-request@v3
+        id: cpr
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+          branch: update-gems
+          delete-branch: true
+          base: ${{ steps.vars.outputs.base_branch }}
+          title: Update gems
+          commit-message: Update gems
+          labels: update
+
+      - name: Check outputs
+        if: steps.cpr.outputs.pull-request-number
+        run: |
+          echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"; exit 1;
