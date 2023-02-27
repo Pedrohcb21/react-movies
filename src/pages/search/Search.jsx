@@ -1,5 +1,4 @@
 import { MainContainer } from "../home/HomeStyle";
-import { FormSearch } from "../../components/formSearch/FormSearch";
 import { CardSearch } from "../../components/cardSearch/CardSearch";
 import { ButtonHome } from "../../components/buttonHome/ButtonHome";
 import { Footer } from "../../components/footer/Footer";
@@ -26,7 +25,7 @@ export function Search () {
 
     return (
         <MainContainer>
-            <FormSearch/>
+            <h1>Resultados para a pesquisa: </h1>
 
             <CardSearch movies={movies} imagePath={imagePath}/>
 
@@ -34,5 +33,5 @@ export function Search () {
 
             <Footer/>
         </MainContainer>
-    )
+    );
 };

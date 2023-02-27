@@ -23,7 +23,7 @@ export function FormSearch () {
                 className= "search" 
                 value={search}
                 />
-                <button type="submit">
+                <button className="BtnSearch" type="submit">
                     <BiSearchAlt2/>
                 </button>
             </form>

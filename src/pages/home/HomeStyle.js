@@ -38,6 +38,9 @@ export const MainContainer = styled.div `
         width: 50vw;
         height: 4vh;
 
+        padding-left: 12px;
+        font-size: 0.5em;
+
         border-radius: 16px;
         border-style: none;
         border: 1px solid #fff;
@@ -48,16 +51,11 @@ export const MainContainer = styled.div `
     }
 
     .search:hover {
-        border: 1px solid red;
+        border: 2px solid red;
         opacity: 0.5;
     }
-
-    .search, placeholder {
-        padding-left: 12px;
-        font-size: 0.5em;
-    }
     
-    .search, button {
+    .BtnSearch {
         padding: 6px;
         margin-left: 8px;
         border-radius: 16px;
@@ -66,5 +64,10 @@ export const MainContainer = styled.div `
         background-color: #000;
         border: 2px solid #fff;
         cursor: pointer;
+    }
+
+    .BtnSearch:hover {
+        border: 2px solid red;
+        opacity: 0.5;
     }
 `

@@ -1,7 +1,7 @@
-import { MainContainerCard } from './CardStyle';
-import { useEffect, useState } from 'react';
-import { getList } from '../../assets/api/api';
-import { BsStar } from "react-icons/bs"
+import { MainContainerCard } from "./CardStyle";
+import { useEffect, useState } from "react";
+import { getList } from "../../assets/api/api";
+import { BsStar } from "react-icons/bs";
 
 export function CardHome() {
     const imagePath = 'https://image.tmdb.org/t/p/w500';
